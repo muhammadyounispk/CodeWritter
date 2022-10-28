@@ -1,5 +1,5 @@
 <?php
-include_once '../common/database.php';
+include_once 'database.php';
  class codeWriter{
 	public  $table_name="null";
 	public $where=null;
