@@ -1,5 +1,5 @@
 <?php
-include_once 'database.php';
+include_once '../common/database.php';
  class codeWriter{
 	public  $table_name="null";
 	public $where=null;
@@ -119,7 +119,8 @@ $obj_arr.='$obj[\''.$col_name.'\']=$_POST[\''.$col_name.'\'];
 $code.=$obj_arr;
 $code.='$query=db::prepInsertQuery($obj,\''.$this->table_name .'\');
 ';
-$code.='$result=db::insertRecord($obj,\''.$this->table_name .'\');
+$code.='$result=db::insertRecord($obj);
+return $result;
 ';
 
 $this->data=$code;
