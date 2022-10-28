@@ -102,10 +102,14 @@ foreach($records as $record){
 		break;
 		case 'insert_POST';
 		//post vars
-		$postVar="";
+		$postVar='
+//checking
+$error=null;
+';
 		foreach ($this->schema as $key => $value) {
 			$col_name = $value['Field'];
 			$postVar.= '$'.$col_name.'=$_POST[\'' . $col_name . '\'];
+if(!$'.$col_name.'){ $error.= \'The Field '.$col_name.' is missing \' ;}
 ';
 }
 
