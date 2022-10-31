@@ -1,6 +1,5 @@
 <?php
-use phpDocumentor\Reflection\Types\This;
-include_once '../common/database.php';
+
  class codeWriter{
 	public  $table_name="null";
 	public $where=null;
